@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hematology Study</title>
+<style>
+body { background:#0a0c10; color:white; font-family:sans-serif; text-align:center; padding:20px;}
+.card { background:#111418; border:1px solid #333; padding:20px; margin:20px auto; max-width:500px; border-radius:10px;}
+button { padding:10px 20px; margin-top:10px; background:#e8352a; color:white; border:none; border-radius:5px;}
+</style>
+</head>
+<body>
+
+<h1>🧠 Hematology Flashcards</h1>
+
+<div class="card" id="card">
+Click to start
+</div>
+
+<button onclick="nextCard()">Next</button>
+
+<script>
+const cards = [
+  {q:"Ferritin low → ?", a:"Iron deficiency"},
+  {q:"Mentzer Index <13 ?", a:"Thalassemia"},
+  {q:"TTP treatment?", a:"Plasmapheresis immediately"},
+  {q:"HIT II action?", a:"Stop Heparin immediately"},
+];
+
+let i = 0;
+
+function nextCard(){
+  const c = cards[i % cards.length];
+  document.getElementById("card").innerHTML =
+    "<b>Q:</b> " + c.q + "<br><br><b>A:</b> " + c.a;
+  i++;
+}
+</script>
+
+</body>
+</html>
